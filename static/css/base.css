@@ -1,0 +1,48 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #AFAFAF;
+    font-family: 'Lato', sans-serif;
+}
+
+.no-pad {
+    padding: 0 !important;
+}
+
+/* header */
+
+.header-wrapped {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+}
+
+.bg-black {
+    background: #000 !important;
+}
+
+.main-logo-link {
+    width: 10%;
+}
+
+.main-logo-link img {
+    max-width: 100%;
+} 
+
+.icon {
+    font-size: 1.5rem;
+    color: #EFCC45 !important;
+}
+
+.form-card {
+    position: relative;
+    top: 10rem;
+    background: #fff;
+    padding: 20px 15px;
+    margin-bottom: 15rem;
+    box-shadow: 5px 10px 18px #888888;
+}
