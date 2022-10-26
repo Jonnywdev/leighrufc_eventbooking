@@ -46,3 +46,38 @@ body {
     margin-bottom: 15rem;
     box-shadow: 5px 10px 18px #888888;
 }
+
+.form-head-wrapped {
+    text-align: center;
+}
+
+.form-head-wrapped h1 {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+hr {
+    border-top: 2px solid #000;
+}
+
+.form-head-wrapped h6, p {
+    font-weight: 100;
+}
+
+.btn-public {
+    width: 100%;
+    background: #EFCC45;
+    color: #000;
+    text-align: center;
+    border: none;
+    -webkit-appearance: none;
+    margin: 20px 0;
+    padding: 10px 0;
+    font-size: 1.5rem;
+}
+
+.input-color {
+    background: #BABABA;
+    color: #000 !important;
+
+}
