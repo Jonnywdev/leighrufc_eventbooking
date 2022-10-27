@@ -81,3 +81,34 @@ hr {
     color: #000 !important;
 
 }
+
+.cards-wrapped {
+    display: flex;
+    margin-top: 10rem;
+}
+
+.cards-wrapped a{
+    text-decoration: none;
+    color: #000;
+}
+
+.card {
+    overflow: hidden;   
+    width: auto;
+    height: 25rem;
+    margin: 0 10px;
+    border: none;
+    transition: all .5s;
+}
+
+.card:hover {
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.card-img-wrapped {
+    width: 100%;
+}
+
+.card-img-top {
+    width: 100%;
+}

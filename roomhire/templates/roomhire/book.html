@@ -1,5 +1,120 @@
-<form action="{% url 'book'%}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form}}
-    <button>SUBMIT</button>
-</form>
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+    <div class="container form-card">
+        <div class="row">
+            <div class="col">
+                <div class="form-head-wrapped">
+                    <h1>Hire out our event room</h1>
+                    <hr>
+                    <h6>Fill out this form and we will get back to you as soon as possible.</h6>
+                    <p>Room hire is from £30</p>
+                </div>
+                {% if request.user.is_authenticated %}
+                <form method="post" action="{% url 'success' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control input-color" id="full_name" name="full_name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control input-color" id="email" name="email_address" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control input-color" id="phone_number" name="phone_number" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-color" id="event_type" name="event_type" placeholder="Event Type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date_of_event">What date is your event?</label>
+                        <input type="date" class="form-control input-color" id="date" name="date_of_event" placeholder="Date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="start_time">What time will your event start?</label>
+                        <select name="start_time" id="start_time" class="form-control input-color" required>
+                            <Option value="Start Time">-- Start Time --</Option>
+                            <Option value="10am">10am</Option>
+                            <Option value="11am">11am</Option>
+                            <Option value="12pm">12pm</Option>
+                            <Option value="1pm">1pm</Option>
+                            <Option value="2pm">2pm</Option>
+                            <Option value="3pm">3pm</Option>
+                            <Option value="4pm">4pm</Option>
+                            <Option value="5pm">5pm</Option>
+                            <Option value="6pm">6pm</Option>
+                            <Option value="7pm">7pm</Option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="end_time">What time will your event end?</label>
+                        <select name="end_time" id="end_time" class="form-control input-color" required>
+                            <Option value="End Time">-- End Time --</Option>
+                            <Option value="11am">11am</Option>
+                            <Option value="12pm">12pm</Option>
+                            <Option value="1pm">1pm</Option>
+                            <Option value="2pm">2pm</Option>
+                            <Option value="3pm">3pm</Option>
+                            <Option value="4pm">4pm</Option>
+                            <Option value="5pm">5pm</Option>
+                            <Option value="6pm">6pm</Option>
+                            <Option value="7pm">7pm</Option>
+                            <Option value="8pm">8pm</Option>
+                            <Option value="9pm">9pm</Option>
+                            <Option value="10pm">10pm</Option>
+                            <Option value="11pm">11pm</Option>
+                            <Option value="12am">12am</Option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="num_people">How many people will be attending your event?</label>
+                        <select name="num_people" id="num_people" class="form-control input-color" required>
+                            <Option value="Number of people">-- Number of people --</Option>
+                            <Option value="up to 20">up to 20</Option>
+                            <Option value="up to 30">up to 30</Option>
+                            <Option value="up to 40">up to 40</Option>
+                            <Option value="up to 50">up to 50</Option>
+                            <Option value="up to 60">up to 60</Option>
+                            <Option value="up to 70">up to 70</Option>
+                            <Option value="up to 80">up to 80</Option>
+                            <Option value="up to 90">up to 90</Option>
+                            <Option value="up to 100">up to 100</Option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control input-color" id="other_details" name="other_details" rows="3" placeholder="Anything else we need to know i.e. Are you a member? Are you having a DJ or Entertainer? Will you be serving Food"></textarea>
+                    </div>
+                    
+                    <!-- <div class="form-check">
+                        <input class="form-check-input input-color" type="checkbox" value="" id="entertainer"  name="entertainer">
+                        <label class="form-check-label" for="entertainer">
+                            Are you having a DJ / Entertainer
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="food"  name="food">
+                        <label class="form-check-label" for="food">
+                            Will you be serving food?
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="member"  name="member">
+                        <label class="form-check-label" for="member">
+                            Are you a member?
+                        </label>
+                    </div> -->
+                    <button type="submit" class="btn-public">Send Request</button>
+                </form>
+                {% else %}
+                <div class="sign-up-wrapped">
+                    <h3>To place a booking request please <a href="{% url 'account_login' %}">sign in</a></h3>
+                    <p>If you have not created an account yet, then please
+                        <a href="{% url 'account_signup' %}">sign up</a> first.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+{% endblock%}

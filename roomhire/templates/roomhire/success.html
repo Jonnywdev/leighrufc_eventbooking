@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container form-card">
+    <div class="row">
+        <div class="col">
+            <div class="form-head-wrapped">
+                <h1>Your booking information</h1>
+                <hr>
+                <p style="text-align: left;">
+                    Your Name:    <b>{{full_name}}</b><br>
+                    Your Email Address:    <b>{{email_address}}</b><br>
+                    Your Phone Number:    <b>{{phone_number}}</b><br>
+                    Event:    <b>{{event_type}}</b><br>
+                    Date Of The Event:    <b>{{date_of_event}}</b><br>
+                    Start Time:    <b>{{start_time}}</b><br>
+                    End Time:    <b>{{end_time}}</b><br>
+                    Number Of People Attending:    <b>{{num_people}}</b><br>
+                    Any Other Details:    <b>{{other_details}}</b><br>
+                </p>
+                <hr>
+                <h4>A member of the team will be in touch shortly.</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+{% endblock %}
+
