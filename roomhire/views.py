@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render, HttpResponse
+from .models import RoomHire
 
 # Create your views here.
 
@@ -39,3 +40,8 @@ def success(request):
 
     else:
         return render(request, 'roomhire/index.html')
+
+
+def all_events(request):
+    event_list = RoomHire.objects.all()
+    return render(request, 'roomhire/events.html', {'event_list': event_list})

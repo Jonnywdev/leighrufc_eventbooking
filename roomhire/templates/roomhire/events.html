@@ -1,0 +1,30 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+
+{% if request.user.is_superuser %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Events</h1>
+{{ event_list }}
+
+{% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>HOW DID YOU GET HERE?</h2>
+    <h3>Please report this bug to derek, tell him the <b>PINEAPPLE</b> has gone.</h3>
+
+{% endif %}
+
+{% endblock %}
+
