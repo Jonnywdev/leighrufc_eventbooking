@@ -18,7 +18,8 @@ def book(request):
         form = RoomHireForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/book?submitted=True')
+            return render(request, 'roomhire/success.html')
+
     else:
         form = RoomHireForm
         if submitted in request.GET:
@@ -59,3 +60,7 @@ def success(request):
 def all_events(request):
     event_list = RoomHire.objects.all()
     return render(request, 'roomhire/events.html', {'event_list': event_list})
+
+    
+def dashboard(request):
+    return render(request, 'roomhire/dashboard.html', {})

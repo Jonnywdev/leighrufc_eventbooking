@@ -57,10 +57,12 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href="{% url 'calendar'%}" class="dropdown-item">Admin</a>
+                                        <a href="{% url 'dashboard'%}" class="dropdown-item">Dashboard</a>
                                     {% endif %}
+                                    <a href="{% url 'home' %}" class="dropdown-item">Home</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
+                                    <a href="{% url 'home' %}" class="dropdown-item">Home</a>
                                     <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                     <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                 {% endif %}
