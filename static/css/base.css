@@ -38,6 +38,12 @@ body {
     color: #EFCC45 !important;
 }
 
+.nav-text {
+    font-size: 1rem;
+    color: #EFCC45 !important;
+    margin-bottom: 0;
+}
+
 .form-card {
     position: relative;
     top: 10rem;

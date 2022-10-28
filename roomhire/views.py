@@ -1,5 +1,7 @@
 from django.shortcuts import redirect, render, HttpResponse
 from .models import RoomHire
+from .forms import RoomHireForm
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -11,7 +13,19 @@ def index(request):
 
 def book(request):
     """ A view to retur the booking form page"""
-    return render(request, 'roomhire/book.html')
+    submitted = False
+    if request.method == 'POST':
+        form = RoomHireForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/book?submitted=True')
+    else:
+        form = RoomHireForm
+        if submitted in request.GET:
+            submitted = True
+
+    return render(request, 'roomhire/book.html', {'form': form,
+                                                  'submitted': submitted})
 
 
 def success(request):

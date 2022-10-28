@@ -7,7 +7,7 @@ class RoomHire(models.Model):
         verbose_name_plural = 'Room Hire Request'
 
     full_name = models.CharField(max_length=300)
-    email_address = models.EmailField()
+    email_address = models.EmailField(blank=True)
     phone_number = models.CharField(max_length=11)
     event_type = models.CharField(max_length=80, null=True)
     date_of_event = models.DateField()
@@ -18,6 +18,3 @@ class RoomHire(models.Model):
 
     def __str__(self):
         return self.event_type
-
-
-
