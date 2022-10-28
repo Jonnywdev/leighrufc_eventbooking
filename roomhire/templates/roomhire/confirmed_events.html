@@ -1,6 +1,7 @@
 {% extends "account/base.html" %}
 {% load i18n %}
 {% load static %}
+
 {% block content %}
 <div class="dashboard-wrapped">
     <div class="row">
@@ -19,25 +20,12 @@
                 <a href="{% url 'confirm' %}"><i class="fa-solid fa-calendar-check"></i>Confirmed Events</a>
                 {% endif %}
             </div>
-
-            <div class="copyright">
-                <p>&#169;AVANDOR 2022</p>
-            </div>
             {% endif %}
         </div>
     </div>
-    <div class="container dashboard-form">
+    <div class="event-request-wrapped">
         <div class="row">
-            <div class="col">
-                <div class="form-head-wrapped">
-                    <h1>Create a room Booking</h1>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="col events-list">  
+                <h1 class="events-header">WIll be confirmed events page</h1>
 
-
-</div>
-
-{% endblock %}
+{% endblock%}

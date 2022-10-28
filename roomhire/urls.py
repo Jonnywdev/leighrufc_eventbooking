@@ -7,5 +7,7 @@ urlpatterns = [
     path('book/', views.book, name='book'),
     path('bookingrequestsuccessful/', views.success, name='success'),
     path('dashboard/', views.dashboard, name='dashboard'),
-    path('allevents/', views.all_events, name='calendar'),
+    path('allevents/', views.all_events, name='event-request'),
+    path('confirmedevents/', views.confirm_e, name='confirm'),
+    path('calendar/', views.calendar, name='calendar'),
 ]

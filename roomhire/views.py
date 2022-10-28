@@ -61,6 +61,15 @@ def all_events(request):
     event_list = RoomHire.objects.all()
     return render(request, 'roomhire/events.html', {'event_list': event_list})
 
-    
+
 def dashboard(request):
     return render(request, 'roomhire/dashboard.html', {})
+
+
+def confirm_e(request):
+ 
+    return render(request, 'roomhire/confirmed_events.html', {})
+
+
+def calendar(request):
+    return render(request, 'roomhire/calendar.html', {}) 

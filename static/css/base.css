@@ -130,13 +130,79 @@ hr {
 
 .menu {
     width: 30%;
-    background-color: azure;
-    padding: 0 20px 20px 40px;
+    background-color: #000;
+    padding: 20px 40px;
+    text-transform: capitalize;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2rem;
 }
 
-.home {
-    width: 60%;
-    background-color: #EFCC45;
-    margin: 0 2rem;
-    text-align: left;
+.menu hr {
+    color: #fff;
+}
+
+.menu-btns-wrapped {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-btns-wrapped a {
+    color: #fff;
+    padding-bottom: 1rem;
+    transition: all .5s;
+}
+
+.menu-btns-wrapped a:hover {
+    color: #EFCC45;
+    text-decoration: none;
+}
+
+.menu-btns-wrapped a i:hover {
+    color: #EFCC45;
+}
+
+.menu-btns-wrapped a i {
+    padding-right: 5px;
+    transition: all .5s;
+}
+
+.copyright {
+    color: #888888;
+}
+
+.dashboard-form {
+    position: relative;
+    background: #fff;
+    padding: 20px 15px;
+    box-shadow: 5px 10px 18px #888888;
+    margin-right: 2rem;
+    margin-bottom: 10rem;
+    width: 75%;
+    height: max-content;
+}
+
+/* events */
+
+.event-request-wrapped {
+    position: relative;
+    background: #fff;
+    padding: 20px 15px;
+    box-shadow: 5px 10px 18px #888888;
+    width: 75%;
+    height: max-content;
+    color: #000;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+.events-header {
+    font-weight: 600;
+}
+
+.events-list ul li {
+    list-style: none;
 }
