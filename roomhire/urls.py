@@ -10,4 +10,6 @@ urlpatterns = [
     path('allevents/', views.all_events, name='event-request'),
     path('confirmedevents/', views.confirm_e, name='confirm'),
     path('calendar/', views.calendar, name='calendar'),
+    path('upcomingevents/', views.upcomingevents, name='upcomingevents'),
+    path('info/', views.info, name='info'),
 ]

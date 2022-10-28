@@ -67,9 +67,16 @@ def dashboard(request):
 
 
 def confirm_e(request):
- 
     return render(request, 'roomhire/confirmed_events.html', {})
 
 
 def calendar(request):
-    return render(request, 'roomhire/calendar.html', {}) 
+    return render(request, 'roomhire/calendar.html', {})
+
+
+def upcomingevents(request):
+    return render(request, 'roomhire/ourupcomingevents.html', {})
+
+
+def info(request):
+    return render(request, 'roomhire/info.html', {})
