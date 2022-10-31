@@ -80,3 +80,7 @@ def upcomingevents(request):
 
 def info(request):
     return render(request, 'roomhire/info.html', {})
+
+
+def clubinfo(request):
+    return render(request, 'roomhire/club-info.html', {})
