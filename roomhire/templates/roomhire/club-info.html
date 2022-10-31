@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="container rel">
+    <div class="row">
+      <div class="col no-pad-left">
+        <h1>Contact Us</h1>
+        <hr>
+        <div class="contact">
+            <div class="icons-wrapped">
+                <h4><i class="fa-solid fa-phone c-black"></i></h4>
+                <h4><i class="fa-solid fa-envelope c-black"></i></h4>
+                <h4><i class="fa-solid fa-location-dot c-blac"></i></h4>
+            </div>
+            <div class="details-wrapped">
+                <h4><a href="tel:01942673526" class="contact-link" target="_blank">01942673526</a></h4>
+                <h4><a href="mailto:Leighrufc.info@gmail.com" class="contact-link" target="_blank">Leighrufc.info@gmail.com</a></h4>
+                <h4><a href="https://goo.gl/maps/oULkLX7HLty2aH3XA" class="contact-link" target="_blank">Leigh RUFC, Hand Lane /  Round Ash Park,  WN7 3NA</a></h4>
+            </div>
+        </div>
+      </div>
+      <div class="col no-pad-right">
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.3231545256676!2d-2.523855384156483!3d53.48055558000734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b071b630ce263%3A0xe3abd233a0916b45!2sLeigh%20RUFC-%20Ltd!5e0!3m2!1sen!2suk!4v1667242719682!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

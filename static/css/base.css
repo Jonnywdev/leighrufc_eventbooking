@@ -10,8 +10,20 @@ body {
     overflow-x: hidden;
 }
 
+.no-margin {
+    margin: 0 !important;
+}
+
 .no-pad {
     padding: 0 !important;
+}
+
+.no-pad-right {
+    padding-right: 0;
+}
+
+.no-pad-left {
+    padding-left: 0;
 }
 
 /* header */
@@ -221,4 +233,40 @@ hr {
 
 .events-list ul li {
     list-style: none;
+}
+
+/* club info */
+
+.rel {
+    margin-top: 10rem;
+}
+
+ul li {
+    list-style: none;
+}
+
+.contact-link {
+    color: #000;
+    transition: all .5s;
+    padding-left: 5px;
+}
+
+.contact-link:hover {
+    color: #343434;
+    text-decoration: none;
+}
+
+.c-black {
+    color: #000 !important;
+    padding-right: 10px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+}
+
+.icons-wrapped, .details-wrapped {
+    display: flex;
+    flex-direction: column;
 }
