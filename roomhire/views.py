@@ -59,6 +59,8 @@ def success(request):
 
 
 def all_events(request):
+    queryset = RoomHire.objects.order_by("-created_on")
+    # paginate_by = 6
     event_list = RoomHire.objects.all()
     return render(request, 'roomhire/events.html', {'event_list': event_list})
 
@@ -101,3 +103,8 @@ def manageusers(request):
 
 def goadmin(request):
     return render(request, 'roomhire/admin.py', {})
+
+
+# def update_booking(request, booking_id):
+#     booking = RoomHire.objects.get(pk=booking_id)
+#     return render(request, 'roomhire/update_details.html', {'booking': 'booking'})

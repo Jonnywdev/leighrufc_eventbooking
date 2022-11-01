@@ -19,6 +19,8 @@ class RoomHire(models.Model):
     kitchen = models.BooleanField(blank=True, null=True)
     entertainer = models.BooleanField(blank=True, null=True)
     member = models.BooleanField(blank=True, null=True)
+    notes = models.TextField(blank=True, null=True)
+    created_on = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.event_type

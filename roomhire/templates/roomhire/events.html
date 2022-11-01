@@ -21,6 +21,10 @@
                 <a href="{% url 'manage-users' %}"><i class="fa-solid fa-user"></i>Manage Users</a>
                 {% endif %}
             </div>
+
+            <div class="copyright">
+                <p>&#169;AVANDOR 2022</p>
+            </div>
             {% endif %}
         </div>
     </div>
@@ -31,7 +35,7 @@
                 <hr>
                     {% for roomhire in event_list %}
                     <div class="card event-card">
-                        <div class="card-header">
+                        <div class="card-header card-h-f">
                             <h1>Customer Request</h1>
 
                         </div>
@@ -53,8 +57,13 @@
                                 <li>Food (T/F): <b>{{ roomhire.kitchen }}</b></li>
                                 <li>DJ or Entertainer (T/F): <b>{{ roomhire.entertainer }}</b></li>
                                 <li>Member (T/F): <b>{{ roomhire.member }}</b></li>
+                                <li>Admin Notes: <b>{{ roomhire.notes }}</b></li>
                             </ul>
                             
+                        </div>
+                        <div class="card-footer card-h-f row">
+                            <a href="" class="btn btn-secondary">Update</a>
+                            Booking submitted on: {{ roomhire.created_on }}
                         </div>
                       </div>
                     {% endfor%}
