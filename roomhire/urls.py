@@ -13,4 +13,8 @@ urlpatterns = [
     path('upcomingevents/', views.upcomingevents, name='upcomingevents'),
     path('info/', views.info, name='info'),
     path('clubinfo/', views.clubinfo, name='clubinfo'),
+    path('bespoke-events/', views.balloons, name='baloon'),
+    path('lbd/', views.lbd, name='food'),
+    path('manage-users/', views.manageusers, name='manage-users'),
+    path('admin/auth/user/', views.goadmin, name='admin'),
 ]

@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render, HttpResponse
+
 from .models import RoomHire
 from .forms import RoomHireForm
 from django.http import HttpResponseRedirect
@@ -84,3 +85,19 @@ def info(request):
 
 def clubinfo(request):
     return render(request, 'roomhire/club-info.html', {})
+
+
+def balloons(request):
+    return render(request, 'roomhire/balloon.html', {})
+
+
+def lbd(request):
+    return render(request, 'roomhire/food.html', {})
+
+
+def manageusers(request):
+    return render(request, 'roomhire/manage-users.html', {})
+
+
+def goadmin(request):
+    return render(request, 'roomhire/admin.py', {})
