@@ -226,13 +226,10 @@ hr {
 
 .event-request-wrapped {
     position: relative;
-    background: #fff;
-    padding: 20px 15px;
-    box-shadow: 5px 10px 18px #888888;
+    
     width: 75%;
     height: max-content;
     color: #000;
-    margin-bottom: 2rem;
     margin-right: 2rem;
 }
 
@@ -243,6 +240,19 @@ hr {
 .events-list ul li {
     list-style: none;
 }
+
+.event-card {
+    margin-bottom: 2rem;
+}
+
+.card-body li b {
+    padding-left: 5px;
+}
+
+.card {
+    height: fit-content;
+}
+
 
 /* club info */
 

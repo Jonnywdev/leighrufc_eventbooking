@@ -18,6 +18,7 @@
                 {% if request.user.is_superuser %}
                 <a href="{% url 'event-request' %}"><i class="fa-sharp fa-solid fa-calendar-plus"></i>Review Events</a>
                 <a href="{% url 'confirm' %}"><i class="fa-solid fa-calendar-check"></i>Confirmed Events</a>
+                <a href="{% url 'manage-users' %}"><i class="fa-solid fa-user"></i>Manage Users</a>
                 {% endif %}
             </div>
             {% endif %}

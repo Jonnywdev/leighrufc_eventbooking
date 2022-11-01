@@ -18,6 +18,7 @@
                 {% if request.user.is_superuser %}
                 <a href="{% url 'event-request' %}"><i class="fa-sharp fa-solid fa-calendar-plus"></i>Review Events</a>
                 <a href="{% url 'confirm' %}"><i class="fa-solid fa-calendar-check"></i>Confirmed Events</a>
+                <a href="{% url 'manage-users' %}"><i class="fa-solid fa-user"></i>Manage Users</a>
                 {% endif %}
             </div>
             {% endif %}
@@ -29,22 +30,33 @@
                 <h1 class="events-header">Review Events</h1>
                 <hr>
                     {% for roomhire in event_list %}
-                    <h1>Customer Request</h1>
-                    <hr>
-                    <strong>Event Type: {{ roomhire }}</strong>
-                    <ul>
-                        <li>Customer Name: {{ roomhire.full_name }}</li>
-                        <li>Email Address: {{ roomhire.email_address }}</li>
-                        <li>phone_number: {{ roomhire.phone_number }}</li>
-                        <li>Date of the event: {{ roomhire.date_of_event }}</li>
-                        <li>Start Time: {{ roomhire.start_time }}</li>
-                        <li>End Time: {{ roomhire.end_time }}</li>
-                        <li>Attendees: {{ roomhire.num_people }}</li>
-                        <li>Other Details: {{ roomhire.other_details }}</li>
-                    </ul>
-                    <br>
-                    <br>
-                    <hr>
+                    <div class="card event-card">
+                        <div class="card-header">
+                            <h1>Customer Request</h1>
+
+                        </div>
+                        <div class="card-body">
+                            <strong>Event Type: {{ roomhire }}</strong>
+                            <br>
+                            <br>
+                            
+                            <ul>
+                                <li>Customer Name: <b>{{ roomhire.full_name }}</b></li>
+                                <li>Email Address: <b>{{ roomhire.email_address }}</b></li>
+                                <li>phone_number: <b>{{ roomhire.phone_number }}</b></li>
+                                <li>Date of the event: <b>{{ roomhire.date_of_event }}</b></li>
+                                <li>Start Time: <b>{{ roomhire.start_time }}</b></li>
+                                <li>End Time: <b>{{ roomhire.end_time }}</b></li>
+                                <li>Attendees: <b>{{ roomhire.num_people }}</b></li>
+                                <li>Other Details: <b>{{ roomhire.other_details }}</b></li>
+                                <li>Room Dressed (T/F): <b>{{ roomhire.room_dressed }}</b></li>
+                                <li>Food (T/F): <b>{{ roomhire.kitchen }}</b></li>
+                                <li>DJ or Entertainer (T/F): <b>{{ roomhire.entertainer }}</b></li>
+                                <li>Member (T/F): <b>{{ roomhire.member }}</b></li>
+                            </ul>
+                            
+                        </div>
+                      </div>
                     {% endfor%}
             </div>
         </div>

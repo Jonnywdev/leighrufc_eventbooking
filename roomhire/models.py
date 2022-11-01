@@ -15,6 +15,10 @@ class RoomHire(models.Model):
     end_time = models.CharField(max_length=20)
     num_people = models.CharField(max_length=20)
     other_details = models.TextField(blank=True)
+    room_dressed = models.BooleanField(blank=True, null=True)
+    kitchen = models.BooleanField(blank=True, null=True)
+    entertainer = models.BooleanField(blank=True, null=True)
+    member = models.BooleanField(blank=True, null=True)
 
     def __str__(self):
         return self.event_type
