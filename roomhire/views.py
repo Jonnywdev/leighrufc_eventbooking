@@ -1,8 +1,8 @@
-from django.shortcuts import redirect, render, HttpResponse
+from django.shortcuts import redirect, render, HttpResponse, get_object_or_404
 
-from .models import RoomHire
-from .forms import RoomHireForm
 from django.http import HttpResponseRedirect
+from .forms import RoomHireForm
+from .models import RoomHire
 
 # Create your views here.
 
@@ -60,6 +60,7 @@ def success(request):
 
 def all_events(request):
     queryset = RoomHire.objects.order_by("-created_on")
+    bookings = RoomHire.objects.all()
     # paginate_by = 6
     event_list = RoomHire.objects.all()
     return render(request, 'roomhire/events.html', {'event_list': event_list})
@@ -105,6 +106,12 @@ def goadmin(request):
     return render(request, 'roomhire/admin.py', {})
 
 
-# def update_booking(request, booking_id):
-#     booking = RoomHire.objects.get(pk=booking_id)
-#     return render(request, 'roomhire/update_details.html', {'booking': 'booking'})
+def update_booking(request, roomhire_id):
+
+    roomhire = get_object_or_404(RoomHire, pk=roomhire_id)
+
+    context = {
+        'roomhire': 'roomhire',
+    }
+
+    return render(request, 'roomhire/update_details.html', context)
