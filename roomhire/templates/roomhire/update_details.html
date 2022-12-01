@@ -1,46 +1,61 @@
 {% extends "base.html" %}
 {% load static %}
-<div class="event-request-wrapped">
-    <div class="row">
-        <div class="col events-list">  
-            <h1 class="events-header">Review Events</h1>
-            <hr>
-                {% for roomhire in event_list %}
-                <div class="card event-card">
-                    <div class="card-header card-h-f">
-                        <h1>Customer Request</h1>
 
-                    </div>
-                    <div class="card-body">
-                        <strong>Event Type: {{ roomhire }}</strong>
-                        <br>
-                        <br>
-                        
-                        <ul>
-                            <li>Customer Name: <b>{{ roomhire.full_name }}</b></li>
-                            <li>Email Address: <b>{{ roomhire.email_address }}</b></li>
-                            <li>phone_number: <b>{{ roomhire.phone_number }}</b></li>
-                            <li>Date of the event: <b>{{ roomhire.date_of_event }}</b></li>
-                            <li>Start Time: <b>{{ roomhire.start_time }}</b></li>
-                            <li>End Time: <b>{{ roomhire.end_time }}</b></li>
-                            <li>Attendees: <b>{{ roomhire.num_people }}</b></li>
-                            <li>Other Details: <b>{{ roomhire.other_details }}</b></li>
-                            <li>Room Dressed (T/F): <b>{{ roomhire.room_dressed }}</b></li>
-                            <li>Food (T/F): <b>{{ roomhire.kitchen }}</b></li>
-                            <li>DJ or Entertainer (T/F): <b>{{ roomhire.entertainer }}</b></li>
-                            <li>Member (T/F): <b>{{ roomhire.member }}</b></li>
-                            <li>Admin Notes: <b>{{ roomhire.notes }}</b></li>
-                        </ul>
-                        
-                    </div>
-                    <div class="card-footer card-h-f row">
-                        <a href="" class="btn btn-secondary">Update</a>
-                        Booking submitted on: {{ roomhire.created_on }}
-                    </div>
-                  </div>
-                {% endfor%}
+{% block content %}
+<div class="dashboard-wrapped">
+    <div class="row">
+        <div class="col menu">
+        {% if request.user.is_authenticated %}
+            <div class="menu-btns-wrapped">
+                <h5>Welcome {{ user }}</h5>
+                <hr>
+                {% if request.user.is_staff %} 
+                <a href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i>Home</a>
+                <a href="{% url 'calendar' %}"><i class="fa-regular fa-calendar-days"></i>Calendar</a>
+                {% endif %}
+                
+                {% if request.user.is_superuser %}
+                <a href="{% url 'event-request' %}"><i class="fa-sharp fa-solid fa-calendar-plus"></i>Review Events</a>
+                <a href="{% url 'confirm' %}"><i class="fa-solid fa-calendar-check"></i>Confirmed Events</a>
+                <a href="{% url 'manage-users' %}"><i class="fa-solid fa-user"></i>Manage Users</a>
+                {% endif %}
+            </div>
+
+            <div class="copyright">
+                <p>&#169;AVANDOR 2022</p>
+            </div>
         </div>
     </div>
+    <div class="event-request-wrapped">
+        <div class="row">
+            <div class="col events-list">  
+                <h1 class="events-header">Update Event</h1>
+                <hr>
+                    
+                    <div class="card event-card">
+                        <div class="card-header card-h-f">
+                            <h1>Customer Request</h1>
+
+                        </div>
+                        <div class="card-body">
+                            
+                           {{ roomhire }}
+                           {{ roomhire.full_name }}
+                            
+                        </div>
+                        <div class="card-footer card-h-f row">
+                            <a href="" class="btn btn-secondary">test</a>
+                            Booking submitted on: {{ roomhire.created_on }}
+                        </div>
+                      </div>
+                    
+            </div>
+        </div>
+        {% endif %}
+    </div>
 </div>
-{% block content%}
+
+
+
+
 {% endblock %}

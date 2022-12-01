@@ -26,8 +26,12 @@ def book(request):
         if submitted in request.GET:
             submitted = True
 
-    return render(request, 'roomhire/book.html', {'form': form,
-                                                  'submitted': submitted})
+    context = {
+        'form': form,
+        'submitted': submitted,
+        }
+
+    return render(request, 'roomhire/book.html', context)
 
 
 def success(request):
@@ -60,7 +64,7 @@ def success(request):
 
 def all_events(request):
     queryset = RoomHire.objects.order_by("-created_on")
-    bookings = RoomHire.objects.all()
+
     # paginate_by = 6
     event_list = RoomHire.objects.all()
     return render(request, 'roomhire/events.html', {'event_list': event_list})
@@ -108,7 +112,7 @@ def goadmin(request):
 
 def update_booking(request, roomhire_id):
 
-    roomhire = get_object_or_404(RoomHire, pk=roomhire_id)
+    roomhire = RoomHire.objects.get(pk=roomhire_id)
 
     context = {
         'roomhire': 'roomhire',

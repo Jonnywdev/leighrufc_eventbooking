@@ -18,5 +18,4 @@ urlpatterns = [
     path('lbd/', views.lbd, name='food'),
     path('manage-users/', views.manageusers, name='manage-users'),
     path('admin/auth/user/', views.goadmin, name='admin'),
-    
 ]
